@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB894908282A4C93003C0167 /* CarMakesList.json in Resources */ = {isa = PBXBuildFile; fileRef = ABCF0D60282A3EC9004D5657 /* CarMakesList.json */; };
 		ABCF0D27282960C4004D5657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D26282960C4004D5657 /* AppDelegate.swift */; };
 		ABCF0D29282960C4004D5657 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D28282960C4004D5657 /* SceneDelegate.swift */; };
 		ABCF0D30282960C8004D5657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCF0D2F282960C8004D5657 /* Assets.xcassets */; };
@@ -16,6 +17,13 @@
 		ABCF0D4A282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D49282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift */; };
 		ABCF0D5728296345004D5657 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D5628296345004D5657 /* HomeViewController.swift */; };
 		ABCF0D592829635E004D5657 /* CarMakesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D582829635D004D5657 /* CarMakesViewController.swift */; };
+		ABCF0D62282A3EF7004D5657 /* CarMake.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D61282A3EF7004D5657 /* CarMake.swift */; };
+		ABCF0D64282A3F10004D5657 /* AppDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D63282A3F10004D5657 /* AppDataProvider.swift */; };
+		ABCF0D66282A3F28004D5657 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D65282A3F28004D5657 /* NetworkManager.swift */; };
+		ABCF0D68282A3F46004D5657 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D67282A3F46004D5657 /* HomeViewModel.swift */; };
+		ABCF0D6A282A3F63004D5657 /* CarMakesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D69282A3F63004D5657 /* CarMakesViewModel.swift */; };
+		ABCF0D6C282A3F7E004D5657 /* CarMakeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D6B282A3F7E004D5657 /* CarMakeCellViewModel.swift */; };
+		ABCF0D6E282A3FAA004D5657 /* CarMakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D6D282A3FAA004D5657 /* CarMakeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		ABCF0D49282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ABCF0D5628296345004D5657 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ABCF0D582829635D004D5657 /* CarMakesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakesViewController.swift; sourceTree = "<group>"; };
+		ABCF0D60282A3EC9004D5657 /* CarMakesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CarMakesList.json; sourceTree = "<group>"; };
+		ABCF0D61282A3EF7004D5657 /* CarMake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMake.swift; sourceTree = "<group>"; };
+		ABCF0D63282A3F10004D5657 /* AppDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataProvider.swift; sourceTree = "<group>"; };
+		ABCF0D65282A3F28004D5657 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ABCF0D67282A3F46004D5657 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ABCF0D69282A3F63004D5657 /* CarMakesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakesViewModel.swift; sourceTree = "<group>"; };
+		ABCF0D6B282A3F7E004D5657 /* CarMakeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakeCellViewModel.swift; sourceTree = "<group>"; };
+		ABCF0D6D282A3FAA004D5657 /* CarMakeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +115,18 @@
 		ABCF0D25282960C4004D5657 /* NativeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				ABCF0D5F282A3EAD004D5657 /* Resources */,
+				ABCF0D5E282A3E94004D5657 /* ViewControllers */,
+				ABCF0D5D282A3E85004D5657 /* ViewModels */,
+				ABCF0D5C282A3E7E004D5657 /* Models */,
+				ABCF0D5B282A3E66004D5657 /* DataProviders */,
+				ABCF0D5A282A3E58004D5657 /* Networking */,
 				ABCF0D26282960C4004D5657 /* AppDelegate.swift */,
 				ABCF0D28282960C4004D5657 /* SceneDelegate.swift */,
 				ABCF0D2F282960C8004D5657 /* Assets.xcassets */,
 				ABCF0D31282960C8004D5657 /* LaunchScreen.storyboard */,
 				ABCF0D34282960C8004D5657 /* Info.plist */,
-				ABCF0D5628296345004D5657 /* HomeViewController.swift */,
-				ABCF0D582829635D004D5657 /* CarMakesViewController.swift */,
+				ABCF0D6D282A3FAA004D5657 /* CarMakeTableViewCell.swift */,
 			);
 			path = NativeChallenge;
 			sourceTree = "<group>";
@@ -125,6 +146,57 @@
 				ABCF0D49282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift */,
 			);
 			path = NativeChallengeUITests;
+			sourceTree = "<group>";
+		};
+		ABCF0D5A282A3E58004D5657 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF0D65282A3F28004D5657 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		ABCF0D5B282A3E66004D5657 /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF0D63282A3F10004D5657 /* AppDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		ABCF0D5C282A3E7E004D5657 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF0D61282A3EF7004D5657 /* CarMake.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABCF0D5D282A3E85004D5657 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF0D67282A3F46004D5657 /* HomeViewModel.swift */,
+				ABCF0D69282A3F63004D5657 /* CarMakesViewModel.swift */,
+				ABCF0D6B282A3F7E004D5657 /* CarMakeCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ABCF0D5E282A3E94004D5657 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF0D5628296345004D5657 /* HomeViewController.swift */,
+				ABCF0D582829635D004D5657 /* CarMakesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ABCF0D5F282A3EAD004D5657 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF0D60282A3EC9004D5657 /* CarMakesList.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABCF0D33282960C8004D5657 /* LaunchScreen.storyboard in Resources */,
+				AB894908282A4C93003C0167 /* CarMakesList.json in Resources */,
 				ABCF0D30282960C8004D5657 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCF0D66282A3F28004D5657 /* NetworkManager.swift in Sources */,
+				ABCF0D6E282A3FAA004D5657 /* CarMakeTableViewCell.swift in Sources */,
+				ABCF0D64282A3F10004D5657 /* AppDataProvider.swift in Sources */,
+				ABCF0D62282A3EF7004D5657 /* CarMake.swift in Sources */,
+				ABCF0D68282A3F46004D5657 /* HomeViewModel.swift in Sources */,
 				ABCF0D27282960C4004D5657 /* AppDelegate.swift in Sources */,
+				ABCF0D6C282A3F7E004D5657 /* CarMakeCellViewModel.swift in Sources */,
+				ABCF0D6A282A3F63004D5657 /* CarMakesViewModel.swift in Sources */,
 				ABCF0D592829635E004D5657 /* CarMakesViewController.swift in Sources */,
 				ABCF0D29282960C4004D5657 /* SceneDelegate.swift in Sources */,
 				ABCF0D5728296345004D5657 /* HomeViewController.swift in Sources */,

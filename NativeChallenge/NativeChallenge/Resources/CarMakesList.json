@@ -1,0 +1,99 @@
+[
+    {
+        "id": 1,
+        "name": "Audi",
+        "isSelected": false
+    }, {
+        "id": 2,
+        "name": "BMW",
+        "isSelected": false
+    }, {
+        "id": 3,
+        "name": "Mercedes",
+        "isSelected": false
+    }, {
+        "id": 4,
+        "name": "Ferrari",
+        "isSelected": false
+    }, {
+        "id": 5,
+        "name": "Bentley",
+        "isSelected": false
+    }, {
+        "id": 6,
+        "name": "Mini Cooper",
+        "isSelected": false
+    }, {
+        "id": 7,
+        "name": "Toyota",
+        "isSelected": false
+    }, {
+        "id": 8,
+        "name": "Honda",
+        "isSelected": false
+    }, {
+        "id": 9,
+        "name": "Skoda",
+        "isSelected": false
+    }, {
+        "id": 10,
+        "name": "Rolls Royce",
+        "isSelected": false
+    }, {
+        "id": 11,
+        "name": "Suzuki",
+        "isSelected": false
+    }, {
+        "id": 12,
+        "name": "Volks Wagen",
+        "isSelected": false
+    }, {
+        "id": 13,
+        "name": "Subaru",
+        "isSelected": false
+    }, {
+        "id": 14,
+        "name": "Dacia",
+        "isSelected": false
+    }, {
+        "id": 15,
+        "name": "Jeep",
+        "isSelected": false
+    }, {
+        "id": 16,
+        "name": "Jaguar",
+        "isSelected": false
+    }, {
+        "id": 17,
+        "name": "Land Rover",
+        "isSelected": false
+    }, {
+        "id": 18,
+        "name": "Mazeratti",
+        "isSelected": false
+    }, {
+        "id": 19,
+        "name": "McLaren",
+        "isSelected": false
+    }, {
+        "id": 20,
+        "name": "Hyundai",
+        "isSelected": false
+    }, {
+        "id": 21,
+        "name": "Tata Motors",
+        "isSelected": false
+    }, {
+        "id": 22,
+        "name": "Maybeck",
+        "isSelected": false
+    }, {
+        "id": 23,
+        "name": "Fiat",
+        "isSelected": false
+    }, {
+        "id": 24,
+        "name": "Ford",
+        "isSelected": false
+    }
+]
