@@ -7,21 +7,12 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate: AnyObject {
-    func favouritesViewModelDidChange(_ viewModel: HomeViewModel)
-}
-
 class HomeViewModel {
     
-    weak var delegate: HomeViewModelDelegate?
-    
-    var favouritesViewModel: CarMakesViewModel = CarMakesViewModel() {
-        didSet {
-            delegate?.favouritesViewModelDidChange(self)
-        }
-    }
+    var carMakesViewModel: CarMakesViewModel = CarMakesViewModel()
     
     var favouritesCount: Int {
-        return favouritesViewModel.selectionCount()
+        return carMakesViewModel.selectionCount()
     }
+    
 }

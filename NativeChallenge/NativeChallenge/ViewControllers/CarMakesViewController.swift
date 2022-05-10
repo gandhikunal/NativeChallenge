@@ -12,17 +12,13 @@ class CarMakesViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    /*
-     Marks the method unavailable, so that we cannot instantiate this vc from interface builder
-     */
-    @available(*, unavailable)
+    @available(*, unavailable, message: "Loading this viewcontroller from nib is currently unsupported")
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         fatalError()
     }
     
-    /*
-     Performing no action here since we are not using interface builder
-     */
+    @available(*, unavailable, message: "Loading this viewcontroller from nib is currently unsupported")
     required init?(coder: NSCoder) {
         nil
     }
@@ -86,7 +82,6 @@ class CarMakesViewController: UIViewController {
         let height = NSLayoutConstraint(item: errorLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 100.0)
         let width = NSLayoutConstraint(item: errorLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 0.80, constant: view.frame.width)
         let centerX = NSLayoutConstraint(item: errorLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0)
-//        NSLayoutConstraint.activate([leading, trailing, centerY, height])
         NSLayoutConstraint.activate([centerX, width, centerY, height])
     }
 }
@@ -102,6 +97,7 @@ extension CarMakesViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Could not cast the dequeued table view cell to a CarMakeTableViewCell")
         }
         if let vm = viewmodel.cellModel(at: indexPath.row) {
+            cell.viewmodel = vm
             cell.makeLabel.text = vm.getName()
             cell.accessoryType = vm.isSelected() ? .checkmark : .none
         }
@@ -118,15 +114,15 @@ extension CarMakesViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension CarMakesViewController: CarMakesViewModelDelegate {
-    func cellViewModelDidChange(_ viewmodel: CarMakesViewModel, at index: Int) {
+    func viewModelDidChangeCell(_ viewmodel: CarMakesViewModel, at index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         let cell = tableView.cellForRow(at: indexPath)
-        if let vm = viewmodel.cellModel(at: index) {
-            cell?.accessoryType = vm.isSelected() ? .checkmark : .none
+        if let cell = cell as? CarMakeTableViewCell, let vm = cell.viewmodel {
+            cell.accessoryType = vm.isSelected() ? .checkmark : .none
         }
     }
     
-    func viewModelDidFetchCarMakesWithSuccess(_ viewmodel: CarMakesViewModel) {
+    func viewModelFetchCarMakesDidFinishWithSuccess(_ viewmodel: CarMakesViewModel) {
         activityIndicator.stopAnimating()
         errorLabel.isHidden = true
         tableView.isHidden = false
@@ -144,7 +140,7 @@ extension CarMakesViewController: CarMakesViewModelDelegate {
 extension CarMakesViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let vc = viewController as? HomeViewController {
-            vc.viewmodel.favouritesViewModel = viewmodel
+            vc.viewmodel.carMakesViewModel = viewmodel
         }
     }
 }

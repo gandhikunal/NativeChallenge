@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AB894908282A4C93003C0167 /* CarMakesList.json in Resources */ = {isa = PBXBuildFile; fileRef = ABCF0D60282A3EC9004D5657 /* CarMakesList.json */; };
+		AB89490A282A599D003C0167 /* CarMakesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB894909282A599D003C0167 /* CarMakesViewModelTests.swift */; };
+		AB89490C282A614F003C0167 /* CarMakeCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89490B282A614F003C0167 /* CarMakeCellViewModelTests.swift */; };
+		AB89494A282AF828003C0167 /* NetworkApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB894949282AF828003C0167 /* NetworkApiError.swift */; };
 		ABCF0D27282960C4004D5657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D26282960C4004D5657 /* AppDelegate.swift */; };
 		ABCF0D29282960C4004D5657 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D28282960C4004D5657 /* SceneDelegate.swift */; };
 		ABCF0D30282960C8004D5657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCF0D2F282960C8004D5657 /* Assets.xcassets */; };
 		ABCF0D33282960C8004D5657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF0D31282960C8004D5657 /* LaunchScreen.storyboard */; };
-		ABCF0D3E282960C8004D5657 /* NativeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D3D282960C8004D5657 /* NativeChallengeTests.swift */; };
+		ABCF0D3E282960C8004D5657 /* AppDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D3D282960C8004D5657 /* AppDataProviderTests.swift */; };
 		ABCF0D48282960C8004D5657 /* NativeChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D47282960C8004D5657 /* NativeChallengeUITests.swift */; };
 		ABCF0D4A282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D49282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift */; };
 		ABCF0D5728296345004D5657 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF0D5628296345004D5657 /* HomeViewController.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB894909282A599D003C0167 /* CarMakesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakesViewModelTests.swift; sourceTree = "<group>"; };
+		AB89490B282A614F003C0167 /* CarMakeCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakeCellViewModelTests.swift; sourceTree = "<group>"; };
+		AB894949282AF828003C0167 /* NetworkApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiError.swift; sourceTree = "<group>"; };
 		ABCF0D23282960C4004D5657 /* NativeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCF0D26282960C4004D5657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABCF0D28282960C4004D5657 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +57,7 @@
 		ABCF0D32282960C8004D5657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABCF0D34282960C8004D5657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABCF0D39282960C8004D5657 /* NativeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABCF0D3D282960C8004D5657 /* NativeChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeChallengeTests.swift; sourceTree = "<group>"; };
+		ABCF0D3D282960C8004D5657 /* AppDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataProviderTests.swift; sourceTree = "<group>"; };
 		ABCF0D43282960C8004D5657 /* NativeChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCF0D47282960C8004D5657 /* NativeChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeChallengeUITests.swift; sourceTree = "<group>"; };
 		ABCF0D49282960C8004D5657 /* NativeChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -134,7 +140,9 @@
 		ABCF0D3C282960C8004D5657 /* NativeChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				ABCF0D3D282960C8004D5657 /* NativeChallengeTests.swift */,
+				ABCF0D3D282960C8004D5657 /* AppDataProviderTests.swift */,
+				AB89490B282A614F003C0167 /* CarMakeCellViewModelTests.swift */,
+				AB894909282A599D003C0167 /* CarMakesViewModelTests.swift */,
 			);
 			path = NativeChallengeTests;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				ABCF0D65282A3F28004D5657 /* NetworkManager.swift */,
+				AB894949282AF828003C0167 /* NetworkApiError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -340,6 +349,7 @@
 				ABCF0D6A282A3F63004D5657 /* CarMakesViewModel.swift in Sources */,
 				ABCF0D592829635E004D5657 /* CarMakesViewController.swift in Sources */,
 				ABCF0D29282960C4004D5657 /* SceneDelegate.swift in Sources */,
+				AB89494A282AF828003C0167 /* NetworkApiError.swift in Sources */,
 				ABCF0D5728296345004D5657 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +358,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABCF0D3E282960C8004D5657 /* NativeChallengeTests.swift in Sources */,
+				ABCF0D3E282960C8004D5657 /* AppDataProviderTests.swift in Sources */,
+				AB89490A282A599D003C0167 /* CarMakesViewModelTests.swift in Sources */,
+				AB89490C282A614F003C0167 /* CarMakeCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

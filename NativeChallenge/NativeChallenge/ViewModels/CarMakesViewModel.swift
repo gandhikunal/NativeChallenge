@@ -8,15 +8,14 @@
 import Foundation
 
 protocol CarMakesViewModelDelegate: AnyObject {
-    func cellViewModelDidChange(_ viewmodel: CarMakesViewModel, at index: Int)
-    func viewModelDidFetchCarMakesWithSuccess(_ viewmodel: CarMakesViewModel)
+    func viewModelDidChangeCell(_ viewmodel: CarMakesViewModel, at index: Int)
+    func viewModelFetchCarMakesDidFinishWithSuccess(_ viewmodel: CarMakesViewModel)
     func viewModelFetchCarMakesDidFinish(_ viewmodel: CarMakesViewModel, withError error: Error)
 }
 class CarMakesViewModel {
     
     weak var delegate: CarMakesViewModelDelegate?
     let dataProvider: CarMakesDataProvider
-    private var dataFetched: Bool = false
     private var carMakeCellModels: [CarMakeCellViewModel] = []
     private var selectedIndices: Set<Int> = []
     
@@ -60,7 +59,7 @@ class CarMakesViewModel {
             selectedIndices.insert(index)
             model.modifySelection(to: true)
         }
-        delegate?.cellViewModelDidChange(self, at: index)
+        delegate?.viewModelDidChangeCell(self, at: index)
     }
     
     func cellModel(at index: Int) -> CarMakeCellViewModel? {
@@ -85,8 +84,7 @@ extension CarMakesViewModel: CarMakesDataProviderDelegate {
             switch result {
             case .success(let makes):
                 self.populateCarMakes(makes)
-                self.dataFetched = true
-                self.delegate?.viewModelDidFetchCarMakesWithSuccess(self)
+                self.delegate?.viewModelFetchCarMakesDidFinishWithSuccess(self)
             case .failure(let error):
                 self.delegate?.viewModelFetchCarMakesDidFinish(self, withError: error)
             }

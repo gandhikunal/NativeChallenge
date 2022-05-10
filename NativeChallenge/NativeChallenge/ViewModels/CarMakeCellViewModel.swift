@@ -22,11 +22,11 @@ class CarMakeCellViewModel {
         return make.isSelected
     }
     
-    func modifySelection(to: Bool) {
+    func modifySelection(to newSelection: Bool) {
         // Simply return if nothing has to be changed.
-        if to == make.isSelected { return }
-        let new = CarMake(id: make.id, name: make.name, isSelected: to)
-        make = new
+        if newSelection == make.isSelected { return }
+        let carMake = CarMake(id: make.id, name: make.name, isSelected: newSelection)
+        make = carMake
     }
     
     func getId() -> Int {

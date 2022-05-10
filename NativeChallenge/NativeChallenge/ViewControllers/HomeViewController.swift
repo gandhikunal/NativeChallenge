@@ -17,17 +17,12 @@ class HomeViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    /*
-     Marks the method unavailable, so that we cannot instantiate this vc from interface builder
-     */
-    @available(*, unavailable)
+    @available(*, unavailable, message: "Loading this viewcontroller from nib is currently unsupported")
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         fatalError()
     }
     
-    /*
-     Performing no action here since we are not using interface builder
-     */
+    @available(*, unavailable, message: "Loading this viewcontroller from nib is currently unsupported")
     required init?(coder: NSCoder) {
         nil
     }
@@ -45,7 +40,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func viewCarMakes() {
-        navigationController?.pushViewController(CarMakesViewController(viewmodel: viewmodel.favouritesViewModel), animated: true)
+        navigationController?.pushViewController(CarMakesViewController(viewmodel: viewmodel.carMakesViewModel), animated: true)
     }
 }
 

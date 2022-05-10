@@ -10,8 +10,7 @@ import Foundation
 protocol CarMakesDataProvider: AnyObject {
     func fetchCarMakes() -> AnyCancelable?
     var carMakesProviderDelegate: CarMakesDataProviderDelegate? { get set }
-    //TODO: Make non-optional and throw fatalError
-    var carMakesEndPoint: URL? { get set }
+    var carMakesEndPoint: URL { get set }
 }
 
 protocol CarMakesDataProviderDelegate: AnyObject {
@@ -22,15 +21,14 @@ class AppDataProvider: CarMakesDataProvider {
     
     private let manager: NetworkManager
     weak var carMakesProviderDelegate: CarMakesDataProviderDelegate?
-    var carMakesEndPoint: URL? = {
+    var carMakesEndPoint: URL = {
         if ProcessInfo.processInfo.environment["read_carmakes_from_disk"] == "1" {
             guard let url = Bundle.main.url(forResource: "CarMakesList", withExtension: "json") else {
-                return nil
+                fatalError("We would like to use a local file, however such cannot be found in the bundle.")
             }
             return url
         } else {
-            //TODO: Implicity unwrap, since we would be hardcoding it anyways
-            return URL(string: "https://actual-endpoint-to-be-queried")
+            return URL(string: "https://actual-endpoint-to-be-queried")!
         }
     }()
     
@@ -49,12 +47,8 @@ class AppDataProvider: CarMakesDataProvider {
             switch result {
             case .success(let response):
                 do {
-                    if let data = response.data {
-                        let decodedType: T = try self.transformData(data)
-                        completion(.success(decodedType))
-                    } else {
-                        completion(.failure(NSError(domain: "NetworkError", code: 100, userInfo: ["Response Code": "\(String(describing: response.httpResponse))"])))
-                    }
+                    let decodedType: T = try self.transformData(response.data)
+                    completion(.success(decodedType))
                 } catch {
                     completion(.failure(error))
                 }
@@ -66,12 +60,8 @@ class AppDataProvider: CarMakesDataProvider {
     }
     
     func fetchCarMakes() -> AnyCancelable? {
-        guard let url = carMakesEndPoint else {
-            carMakesProviderDelegate?.fetchCarMakesDidFinish(self, withResult: .failure(NSError(domain: "AppDataProviderError", code: 0, userInfo: ["Reason" : "CarMakes endpoint is nil"])))
-            return nil
-        }
-        
-        return fetchData(from: url) { (result: Result<[CarMake], Error>) in
+        return fetchData(from: carMakesEndPoint) { [weak self] (result: Result<[CarMake], Error>) in
+            guard let self = self else { return }
             switch result {
             case .success(let makes):
                 self.carMakesProviderDelegate?.fetchCarMakesDidFinish(self, withResult: .success(makes))
